@@ -21,9 +21,9 @@ class Sender:
 
             signed_tx = self.w3.eth.account.sign_transaction(tx, private_key)
             tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
-            message = f'Sent {value} wei from {public_key} to {receiver} with gas {gas}. tx hash: {tx_hash}'
+            message = f'\nSent {value} wei\nfrom {public_key} to {receiver}\nwith gas {gas}\ntx hash: {tx_hash}'
         except Exception as e:
-            message = f'Tried to send {value} wei from {public_key} to {receiver} with gas {gas} but caught exeption: ' + str(e)
+            message = f'\nTried to send {value} wei\nfrom {public_key} to {receiver}\nwith gas {gas}\nbut caught exeption:\n' + str(e)
         Logger().log(message)
 
     def send_max(self, private_key, public_key, receiver):

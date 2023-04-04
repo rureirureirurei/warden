@@ -23,7 +23,7 @@ class Warden:
         while True:
             current = balance_now()
             if current != balance:
-                Logger().log(f'Account {config.PUBLIC_KEY} \'s balance has changed! was: {balance}, became: {current}')
+                Logger().log(f'\nAccount {config.PUBLIC_KEY} \'s balance has changed!\n{balance}eth -> {current}eth')
                 Sender(self.w3).send_max(config.PRIVATE_KEY, config.PUBLIC_KEY, config.RECEIVER)
             time.sleep(config.WATCHER_DELAY)
             balance = current
