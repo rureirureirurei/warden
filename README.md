@@ -38,11 +38,3 @@ accounts = [
 
 3) Run the script
 `python3 main.py`
-
-
-# TODO's
-- What should we do if we miss an update?
-- Check incoming transactions by parsing blocks instead of updating the balance.
-- Combine both Arbitrum and Ethereum wardens into one file?
-- Implement smart gas pricing.
-- Create issues.
