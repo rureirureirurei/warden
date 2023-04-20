@@ -1,4 +1,3 @@
-from web3 import Web3, HTTPProvider
 from logger import Logger
 
 
@@ -6,7 +5,6 @@ class Sender:
     def __init__(self, w3):
         self.w3 = w3
 
-    # BOTH VALUE AND GAS IN WEI
     def send(self, private_key, public_key, receiver, value, gas, intrinsic=21000):
         try:
             nonce = self.w3.eth.get_transaction_count(public_key)
