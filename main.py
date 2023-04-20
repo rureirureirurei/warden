@@ -12,8 +12,7 @@ if __name__ == '__main__':
         network = account['network']
 
         if network == 'eth':
-            pass
-        #   watcher = ethWarden(account, config['infura_api_key'])
+            watcher = ethWarden(account)
         elif network == 'arbitrum':
             watcher = arbitrumWarden(account)
         else:
