@@ -5,7 +5,7 @@ Auto-transfer funds from multiple eth/arbitrum accounts.
 
 1) Firstly, you'll have to create a `config.py` file. 
 
-`request_delay_seconds` sets how often the script checks for balance updates for each account. 
+`request_delay_seconds` sets how often the script checks for balance updates for each account. The rule of thumb is to have not more than 5/s for all the accounts together.
 
 `arbitrum_api_key` can be left unchanged.
 
