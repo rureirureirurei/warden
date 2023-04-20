@@ -8,5 +8,7 @@ class Logger:
 
     def log(self, message):
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        message = time + ": " + message + '\n'
         with open(self.path, 'a') as f:
-            f.write(time + ": " + message + '\n\n')
+            f.write(message)
+        print(message)

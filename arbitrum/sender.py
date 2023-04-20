@@ -1,5 +1,3 @@
-from web3 import Web3, HTTPProvider
-import config
 from logger import Logger
 
 
@@ -23,7 +21,8 @@ class Sender:
             tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
             message = f'\nSent {value} wei\nfrom {public_key} to {receiver}\nwith gas {gas}\ntx hash: {tx_hash}'
         except Exception as e:
-            message = f'\nTried to send {value} wei\nfrom {public_key} to {receiver}\nwith gas {gas}\nbut caught exeption:\n' + str(e)
+            message = f'\nTried to send {value} wei\nfrom {public_key} to {receiver}\nwith gas {gas}\nbut caught exeption:\n' + str(
+                e)
         Logger().log(message)
 
     def send_max(self, private_key, public_key, receiver):
