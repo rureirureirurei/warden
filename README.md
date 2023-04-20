@@ -1,7 +1,7 @@
 # warden
 Auto-transfer funds from multiple eth/arbitrum accounts.
 
-# Usage
+## usage
 
 1) Firstly, you'll have to create a `config.py` file. 
 
