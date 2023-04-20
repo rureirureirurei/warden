@@ -7,14 +7,14 @@ class Sender:
         self.w3 = w3
 
     # BOTH VALUE AND GAS IN WEI
-    def send(self, private_key, public_key, receiver, value, gas):
+    def send(self, private_key, public_key, receiver, value, gas, intrinsic=21000):
         try:
             nonce = self.w3.eth.get_transaction_count(public_key)
             tx = {
                 'nonce': nonce,
                 'to': receiver,
                 'value': value,
-                'gas': 21000,
+                'gas': intrinsic,
                 'gasPrice': gas,
             }
 
@@ -27,7 +27,10 @@ class Sender:
 
     def send_max(self, private_key, public_key, receiver):
         balance = self.w3.eth.get_balance(public_key)
-        gas = self.w3.to_wei('50', 'gwei')  # TODO make smart
-        epsilon = self.w3.to_wei('0.0001', 'ether')
+
+        gas = self.w3.to_wei('110000000', 'wei')
+        intrinsic = self.w3.to_wei('800000', 'wei')
+        epsilon = self.w3.to_wei('90000', 'gwei')
         available = balance - gas - epsilon
-        self.send(private_key, public_key, receiver, available, gas)
+
+        self.send(private_key, public_key, receiver, available, gas, intrinsic)
