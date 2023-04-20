@@ -46,4 +46,5 @@ You should see something like this if everything runs correctly.
 2023-04-21 00:50:30.668: Started watching 0x2224567890123456789012345678901234567890 with 0.00078276861 eth on the network eth.
 ```
 4) Logging
+
 All the important information will be saved to the `logs` file.
