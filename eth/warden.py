@@ -20,6 +20,7 @@ class Warden:
 
         balance = balance_now()
         Logger().log(f"Started watching {self.public_key} with {balance_now()} eth on the network {self.network}.")
+
         while True:
             current = balance_now()
             if current != balance:
