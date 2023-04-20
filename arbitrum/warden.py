@@ -1,7 +1,7 @@
 from web3 import Web3
 import time
 from logger import Logger
-from eth.sender import Sender
+from arbitrum.sender import Sender
 
 
 class Warden:
