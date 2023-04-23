@@ -5,13 +5,15 @@ Auto-transfer funds from multiple eth/arbitrum accounts.
 
 1) Firstly, you'll have to create a `config.py` file. 
 
-`request_delay_seconds` sets how often the script checks for balance updates for each account. The rule of thumb is to have not more than 5/s for all the accounts together.
+`request_delay_seconds` sets how often the script checks for balance updates for each account. 
 
-`arbitrum_api_key` can be left unchanged.
+Keep in mind that there are limits on both infura and arbitrum api's.
 
-`infura_api_key` should be set to your own value.
+`arbitrum_api_key` can be left unchanged. 
 
-Here's an example:
+`infura_api_key` should be set to your own value. Infura provides an awesome free api, so go check it out.
+
+Here's an example of config.py:
 ```
 accounts = [
     {
@@ -45,6 +47,10 @@ You should see something like this if everything runs correctly.
 
 2023-04-21 00:50:30.668: Started watching 0x2224567890123456789012345678901234567890 with 0.00078276861 eth on the network eth.
 ```
+
+4) Logging
+
+Logs are saved in the `logs` file.
 4) Logging
 
 All the important information will be saved to the `logs` file.
